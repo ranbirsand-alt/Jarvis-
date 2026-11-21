@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JARVIS AI</title>
+  <style>
+    body {
+      background: #061426;
+      color: #00d9ff;
+      font-family: Arial;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      background: #00bfff;
+      padding: 15px 25px;
+      border: 0;
+      border-radius: 12px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>J.A.R.V.I.S.</h1>
+  <p>Your personal AI assistant</p>
+  <button onclick="speak()">Talk to JARVIS</button>
+  <p id="status">Ready</p>
+
+  <script>
+    function speak() {
+      const voice = new SpeechSynthesisUtterance(
+        "Hello. I am Jarvis. How can I help you?"
+      );
+      voice.lang = "en-GB";
+      speechSynthesis.speak(voice);
+      document.getElementById("status").textContent = "Speaking";
+    }
+  </script>
+</body>
+</html>
